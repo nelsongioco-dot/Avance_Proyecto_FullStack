@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Tareas | Proyecto Full Stack</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- Inicio de sesión -->
+  <section id="seccion-login" class="contenedor">
+    <header class="encabezado">
+      <span class="etiqueta">MI ORGANIZADOR</span>
+      <h1>Iniciar sesión</h1>
+      <p>Ingresa para administrar tus tareas.</p>
+    </header>
+
+    <div class="panel">
+      <form id="formulario-login">
+        <label for="correo-login">Correo electrónico</label>
+        <input
+          type="email"
+          id="correo-login"
+          placeholder="ejemplo@correo.com"
+          autocomplete="username"
+          required
+        >
+
+        <label for="contrasena-login">Contraseña</label>
+        <input
+          type="password"
+          id="contrasena-login"
+          placeholder="Escribe tu contraseña"
+          autocomplete="current-password"
+          required
+        >
+
+        <button type="submit" id="boton-login">
+          Entrar
+        </button>
+
+        <p id="mensaje-login" role="alert"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Gestor de tareas -->
+  <main id="seccion-tareas" class="contenedor" hidden>
+    <header class="encabezado">
+      <span class="etiqueta">MI ORGANIZADOR</span>
+      <h1>Gestor de Tareas</h1>
+      <p>Organiza tus pendientes de forma sencilla.</p>
+    </header>
+
+    <section class="panel">
+      <form id="formulario-tareas" novalidate>
+        <label for="nueva-tarea">Nueva tarea</label>
+
+        <div class="formulario-fila">
+          <input
+            type="text"
+            id="nueva-tarea"
+            placeholder="Ej. Estudiar JavaScript"
+            maxlength="120"
+          >
+
+          <button type="submit" id="agregar-tarea">
+            + Agregar tarea
+          </button>
+        </div>
+
+        <p id="mensaje-error" role="alert"></p>
+      </form>
+
+      <div class="resumen">
+        <h2>Mis tareas</h2>
+        <span id="contador-tareas">0 pendientes</span>
+      </div>
+
+      <ul id="lista-tareas" aria-label="Lista de tareas"></ul>
+
+      <p id="mensaje-vacio" class="mensaje-vacio">
+        Todavía no tienes tareas. ¡Agrega la primera!
+      </p>
+    </section>
+
+    <footer>
+      <p>Avance del Proyecto · Desarrollo Full Stack</p>
+    </footer>
+  </main>
+
+</body>
+</html>
