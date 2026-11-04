@@ -74,9 +74,6 @@ router.post("/registro", async (req, res) => {
   }
 });
 
-module.exports = router;
-
-
  // Inicio de sesión de usuarios.
 router.post("/login", async (req, res) => {
   const { correo, contrasena } = req.body || {};
@@ -148,3 +145,4 @@ router.post("/login", async (req, res) => {
     if (db) await db.end();
   }
 });
+module.exports = router;
